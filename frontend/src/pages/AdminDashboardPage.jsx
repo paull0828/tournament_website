@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+const backendUrl = import.meta.env.VITE_API_URL;
 
 function buildCsv(registrations) {
   const headers = [
@@ -43,7 +44,7 @@ export default function AdminDashboardPage() {
       return;
     }
 
-    fetch("/api/registrations")
+    fetch(`${backendUrl}/api/registrations`)
       .then((res) => res.json())
       .then((data) => {
         setRegistrations(data || []);
@@ -58,7 +59,7 @@ export default function AdminDashboardPage() {
   const deleteUser = async (id) => {
     if (!confirm("Are you sure you want to delete this registration?")) return;
     try {
-      const response = await fetch(`/api/registrations/${id}`, {
+      const response = await fetch(`${backendUrl}/api/registrations/${id}`, {
         method: "DELETE",
       });
       if (!response.ok) throw new Error("Delete failed");

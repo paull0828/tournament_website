@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 
+const backendUrl = import.meta.env.VITE_API_URL;
 const jerseySizes = ["S", "M", "L", "XL", "XXL", "XXXL"];
 const playerTypes = ["Batsman", "Bowler", "All-Rounder"];
 
@@ -48,7 +49,7 @@ export default function RegisterPage() {
     }
 
     try {
-      const response = await fetch("/api/register", {
+      const response = await fetch(`${backendUrl}/api/register`, {
         method: "POST",
         body: formData,
       });

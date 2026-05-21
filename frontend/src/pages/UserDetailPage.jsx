@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+const backendUrl = import.meta.env.VITE_API_URL;
 
 export default function UserDetailPage() {
   const { id } = useParams();
@@ -13,7 +14,7 @@ export default function UserDetailPage() {
       return;
     }
 
-    fetch(`/api/registrations/${id}`)
+    fetch(`${backendUrl}/api/registrations/${id}`)
       .then((res) => {
         if (!res.ok) throw new Error("Not found");
         return res.json();
