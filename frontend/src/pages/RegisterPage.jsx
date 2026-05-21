@@ -139,16 +139,16 @@ export default function RegisterPage() {
             transition={{ duration: 0.7 }}
           >
             <span className="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">
-              Team Registration
+              Player Registration
             </span>
             <h1 className="mt-6 text-4xl font-semibold tracking-tight text-white light:text-slate-950 sm:text-5xl">
-              Register your SPL team with confidence.
+              Register yourself for SPL Season 7 and showcase your game.
             </h1>
-            <p className="mt-4 max-w-2xl text-slate-300 leading-8 light:text-slate-700">
+            {/* <p className="mt-4 max-w-2xl text-slate-300 leading-8 light:text-slate-700">
               Complete one polished form, protect against duplicate submissions,
               and receive premium confirmation instantly.
-            </p>
-            <div className="mt-8 space-y-4 rounded-[2rem] border border-slate-800/60 bg-slate-900/85 p-6 shadow-xl shadow-cyan-500/10 light:border-slate-200/40 light:bg-slate-100/80">
+            </p> */}
+            {/* <div className="mt-8 space-y-4 rounded-[2rem] border border-slate-800/60 bg-slate-900/85 p-6 shadow-xl shadow-cyan-500/10 light:border-slate-200/40 light:bg-slate-100/80">
               <div className="flex items-center gap-3 text-sm text-slate-300 light:text-slate-700">
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-300 ring-1 ring-cyan-400/20">
                   ✓
@@ -162,7 +162,7 @@ export default function RegisterPage() {
                 </span>
                 Smooth onboarding with animated interactions and fast feedback.
               </div>
-            </div>
+            </div> */}
           </motion.div>
         </GlassCard>
 
@@ -177,9 +177,9 @@ export default function RegisterPage() {
                 <h2 className="text-3xl font-semibold text-white light:text-slate-950">
                   Register for SPL 2026
                 </h2>
-                <p className="mt-2 text-slate-400 light:text-slate-700">
+                {/* <p className="mt-2 text-slate-400 light:text-slate-700">
                   A polished registration flow for players and owners.
-                </p>
+                </p> */}
               </div>
               <Link
                 to="/"
