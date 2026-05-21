@@ -232,18 +232,21 @@ export default function RegisterPage() {
             </div>
           )}
 
-          <label className="block text-sm text-slate-200">
-            <span className="mb-2 block font-medium text-slate-300">
-              Receipt Upload
-            </span>
-            <input
-              type="file"
-              accept="image/*"
-              onChange={(event) => setReceipt(event.target.files?.[0] ?? null)}
-              className="w-full rounded-3xl border border-slate-700 bg-slate-950/90 px-4 py-3 text-slate-100 outline-none file:mr-4 file:rounded-full file:border-0 file:bg-cyan-500 file:px-4 file:py-2 file:text-slate-950"
-            />
-          </label>
-
+          {form.paymentMethod === "online" && (
+            <label className="block text-sm text-slate-200">
+              <span className="mb-2 block font-medium text-slate-300">
+                Receipt Upload
+              </span>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(event) =>
+                  setReceipt(event.target.files?.[0] ?? null)
+                }
+                className="w-full rounded-3xl border border-slate-700 bg-slate-950/90 px-4 py-3 text-slate-100 outline-none file:mr-4 file:rounded-full file:border-0 file:bg-cyan-500 file:px-4 file:py-2 file:text-slate-950"
+              />
+            </label>
+          )}
           <button
             type="submit"
             disabled={status.loading}
