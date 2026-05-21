@@ -17,7 +17,7 @@ const registrationSchema = new mongoose.Schema(
       default: "pending", // Default until confirmed
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 // Create the model

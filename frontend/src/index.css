@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,11 +12,15 @@ html {
   scroll-behavior: smooth;
 }
 
+html.light {
+  color-scheme: light;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
   font-family:
-    Inter,
+    "Inter",
     ui-sans-serif,
     system-ui,
     -apple-system,
@@ -22,8 +28,19 @@ body {
     "Segoe UI",
     sans-serif;
   background:
-    radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 35%),
-    linear-gradient(180deg, #020617 0%, #020617 38%, #0f172a 100%);
+    radial-gradient(circle at top, rgba(56, 189, 248, 0.16), transparent 30%),
+    linear-gradient(180deg, #020617 0%, #0f172a 100%);
+  color: #f8fafc;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+html.light body {
+  background:
+    radial-gradient(circle at top, rgba(56, 189, 248, 0.08), transparent 30%),
+    linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #0f172a;
 }
 
 button,
@@ -39,8 +56,25 @@ textarea::placeholder {
   color: #94a3b8;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 9999px;
+}
+
 .container {
   max-width: 1080px;
   margin: 0 auto;
   padding: 2rem 1.25rem;
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
 }
